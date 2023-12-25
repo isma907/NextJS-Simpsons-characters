@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 21px;
+  align-items: center;
+}
+
+.card_list_item {
+  min-height: 320px;
+}
+
+.card_list_item_image {
+  background-position: center 10px;
+}
