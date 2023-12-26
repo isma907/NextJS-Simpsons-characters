@@ -1,8 +1,6 @@
 .main {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 21px;
-  align-items: center;
+  padding-top: 90px;
+  padding-bottom: 30px;
 }
 
 .card_list_item {
@@ -10,5 +8,5 @@
 }
 
 .card_list_item_image {
-  background-position: center 10px;
+  background-position: center 10px !important;
 }

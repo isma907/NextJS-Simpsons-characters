@@ -1,3 +1,5 @@
+import { GridSize } from "@mui/material";
+
 export interface searchUserParam {
   search?: string;
   limit?: number;
@@ -12,4 +14,8 @@ export interface SimpsonCharacter {
   gender: string;
   status: string;
   occupation: string;
+}
+
+export interface Sizes {
+  [key: string]: GridSize;
 }

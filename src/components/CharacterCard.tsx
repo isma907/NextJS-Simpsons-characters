@@ -1,5 +1,12 @@
 import { SimpsonCharacter } from "@/interfaces";
-import { Card, CardMedia, CardContent, Typography } from "@mui/material";
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  CardActions,
+  Button,
+} from "@mui/material";
 import styles from "../app/page.module.css";
 
 interface Props {
@@ -33,10 +40,6 @@ export default function CharacterCard({ data, className, style }: Props) {
           {data.gender}
         </Typography>
       </CardContent>
-      {/* <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions> */}
     </Card>
   );
 }

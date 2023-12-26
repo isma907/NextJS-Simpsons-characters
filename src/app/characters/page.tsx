@@ -1,6 +1,4 @@
 "use client";
-import styles from "../page.module.css";
-import { Grid } from "@mui/material";
 import { searchUserParam } from "@/interfaces";
 import { getUsers } from "@/services";
 import CharacterListSkeleton from "@/components/CharacterListSkeleton";
@@ -12,18 +10,24 @@ export default function UsersPage({
 }: {
   searchParams?: searchUserParam;
 }) {
+
   const fetchUsers = getUsers({
     search: searchParams?.search ?? "",
     page: 1,
   });
 
+  const gridSettings = {
+    xs: 6,
+    md: 3,
+    lg: 3,
+  };
+
   return (
-    <main className={styles.main} key={Math.random()}>
-      <Grid container spacing={4}>
-        <Suspense fallback={<CharacterListSkeleton />}>
-          <UserList users={fetchUsers} />
-        </Suspense>
-      </Grid>
-    </main>
+    <Suspense
+      key={Math.random()}
+      fallback={<CharacterListSkeleton gridSettings={gridSettings} />}
+    >
+      <UserList users={fetchUsers} gridSettings={gridSettings} />
+    </Suspense>
   );
 }

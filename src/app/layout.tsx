@@ -1,4 +1,3 @@
-import { AppHeader } from "@/components";
 import "./globals.css";
 
 export default function RootLayout({
@@ -9,7 +8,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AppHeader />
         {children}
       </body>
     </html>

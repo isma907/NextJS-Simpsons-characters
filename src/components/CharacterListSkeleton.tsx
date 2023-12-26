@@ -1,12 +1,22 @@
+import { Sizes } from "@/interfaces";
 import { Grid, Card, Box, Skeleton } from "@mui/material";
-export default function CharacterListSkeleton() {
+export default function CharacterListSkeleton({
+  gridSettings,
+}: {
+  gridSettings: Sizes;
+}) {
   const skeletonItems = Array.from(new Array(24));
 
   return (
     <>
       {skeletonItems?.map((item, index) => (
-        <Grid item key={item + "_" + index} xs={6} md={3} lg={2}>
-          <Card elevation={0}>
+        <Grid
+          item
+          xs={gridSettings?.xs}
+          md={gridSettings?.md}
+          lg={gridSettings?.lg}
+        >
+          <Card elevation={0} key={item + "_" + index}>
             <Box>
               <Skeleton variant="rectangular" width="100%" height={200} />
               <Box sx={{ p: 1 }}>
