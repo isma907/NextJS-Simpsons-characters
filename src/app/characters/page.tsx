@@ -10,7 +10,6 @@ export default function UsersPage({
 }: {
   searchParams?: searchUserParam;
 }) {
-
   const fetchUsers = getUsers({
     search: searchParams?.search ?? "",
     page: 1,

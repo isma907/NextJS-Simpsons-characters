@@ -12,6 +12,7 @@ export default function CharacterListSkeleton({
       {skeletonItems?.map((item, index) => (
         <Grid
           item
+          key={index}
           xs={gridSettings?.xs}
           md={gridSettings?.md}
           lg={gridSettings?.lg}
