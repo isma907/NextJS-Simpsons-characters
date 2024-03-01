@@ -76,9 +76,9 @@ export default function AppHeader() {
     }
     const newSearchString = newSearchParams.toString();
     const mainFilter = `${newSearchString}`;
-    const newUrl = pathName.startsWith("/characters")
+    const newUrl = pathName.startsWith("/")
       ? `${pathName}?${mainFilter}`
-      : `/characters?${mainFilter}`;
+      : `/?${mainFilter}`;
     replace(newUrl);
   }, 1000);
 

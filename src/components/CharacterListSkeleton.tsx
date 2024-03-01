@@ -3,7 +3,7 @@ import { Grid, Card, Box, Skeleton } from "@mui/material";
 export default function CharacterListSkeleton({
   gridSettings,
 }: {
-  gridSettings: Sizes;
+  gridSettings?: Sizes;
 }) {
   const skeletonItems = Array.from(new Array(24));
 

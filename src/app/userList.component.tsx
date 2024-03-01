@@ -2,7 +2,6 @@
 import CharacterCard from "@/components/CharacterCard";
 import { SimpsonCharacter, Sizes } from "@/interfaces";
 import { Grid } from "@mui/material";
-import styles from "../page.module.css";
 
 export default async function UserList({
   users,
@@ -22,11 +21,7 @@ export default async function UserList({
           md={gridSettings?.md}
           lg={gridSettings?.lg}
         >
-          <CharacterCard
-            key={item._id}
-            data={item}
-            className={styles.card_list_item}
-          />
+          <CharacterCard key={item._id} data={item} />
         </Grid>
       ))}
     </>

@@ -1,15 +1,27 @@
-import "./globals.css";
+"use client";
+import AppHeader from "@/components/AppHeader";
+import { Container, Grid } from "@mui/material";
+import styles from "./page.module.css";
 
-export default function RootLayout({
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
+    <>
+      <html lang="en">
+        <body>
+          <AppHeader />
+          <Container maxWidth="lg">
+            <main className={styles.main} key={Math.random()}>
+              <Grid container spacing={4}>
+                {children}
+              </Grid>
+            </main>
+          </Container>
+        </body>
+      </html>
+    </>
   );
 }
