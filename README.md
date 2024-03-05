@@ -10,6 +10,9 @@
 `npm start`
 
 
+check your connection to DB on `.env` file
+
+
 2 - Clone this repo
 
 `npm install`
