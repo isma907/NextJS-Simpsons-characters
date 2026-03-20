@@ -22,19 +22,19 @@ export default function Header() {
   }, 300);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b backdrop-blur supports-[backdrop-filter]:bg-background/60 bg-white/75 dark:bg-black/75">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between gap-4">
-        <Link href="/" className="font-bold text-xl tracking-tight text-yellow-500 whitespace-nowrap drop-shadow-sm">
+    <header className="w-full border-b border-gray-200 bg-white dark:border-gray-800 dark:bg-black p-4 sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/60 bg-white/75 dark:bg-black/75">
+      <div className="container mx-auto flex items-center justify-between gap-4">
+        <Link href="/" className="font-bold text-3xl text-amber-300">
           The Simpsons
         </Link>
         <div className="relative w-full max-w-sm flex-1">
           <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-            <Search className="h-4 w-4 text-gray-400" />
+            <Search className="h-4 w-4 text-gray-500" />
           </div>
           <input
             type="search"
             placeholder="Search characters..."
-            className="w-full h-10 pl-10 pr-4 rounded-full border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all text-sm"
+            className="search-input pl-10 bg-white"
             defaultValue={searchParams.get('q')?.toString() || ''}
             onChange={(e) => handleSearch(e.target.value)}
           />

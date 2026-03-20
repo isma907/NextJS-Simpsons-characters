@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
+/* 🎯 Simpson font */
+@font-face {
+  font-family: "Simpsonfont";
+  src: url("/fonts/simpsons.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --card-background: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card-background);
+
+  --font-sans: "Simpsonfont", cursive;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #0a0a0a;
+    --card-background: #ffffff;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    var(--font-sans),
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+tr {
+  border: none;
+}
+
+@layer components {
+  .card {
+    @apply border border-gray-700 bg-card rounded-xl p-6;
+  }
+
+  .card-title {
+    @apply text-lg font-bold mb-2 text-black;
+  }
+
+  .blured-bg {
+    @apply backdrop-blur-md bg-card/30 border border-white/10 shadow-lg;
+  }
+
+  .btn {
+    @apply cursor-pointer text-black bg-amber-50 p-4 rounded-md;
+  }
+
+  .search-input {
+    @apply w-full p-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500;
+  }
 }
